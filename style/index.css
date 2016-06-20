@@ -71,7 +71,36 @@ button{
     top: 55%;
 }
 
-/* 人物暂停 */
+/* 太阳 */
+#sun{
+	background:url(../img/sun.png) no-repeat;
+	position: absolute;
+	z-index: 1;
+	top: -30px;
+	right: 40%;
+	width: 201px;
+	height: 201px;
+}
+/* 云 */
+.cloud{
+	position: absolute;
+	z-index: 2;
+}
+.cloud1{
+	background:url(../img/cloud1.png) no-repeat;
+	top: 15%;
+	left: -5%;
+	width: 181px;
+	height: 101px;	
+}
+.cloud2{
+	background:url(../img/cloud2.png) no-repeat;
+	right: -5%;
+	width: 301px;
+	height: 140px;	
+}
+
+/* 人物暂停 通过css3的animation-play-state属性来控制*/
 .pauseWalk {
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
@@ -130,5 +159,82 @@ button{
 	}
 	100%{
 		background-position: -0px -291px;
+	}
+}
+
+/* 太阳旋转动画 */
+.rotation{
+	-webkit-animation-name:rotation;
+	-webkit-animation-duration:30s;
+	-moz-animation-name:rotation;
+	-moz-animation-duration:30s;
+}
+
+@-webkit-keyframes rotation{
+	0%{
+		transform: translateX(0) translateY(0);
+	}
+	100%{
+		transform: translateX(-2000px) translateY(400px);
+	}
+}
+@-moz-keyframes rotation{
+	0%{
+		transform: translateX(0) translateY(0);
+	}
+	100%{
+		transform: translateX(-2000px) translateY(400px);
+	}
+}
+
+/* 云移动动画 */
+.cloud1Anim{
+	-webkit-animation-name:smallCloud;
+	-webkit-animation-duration:30s;
+	-webkit-animation-iteration:infinite;
+	-moz-animation-name:smallCloud;
+	-moz-animation-duration:30s;
+	-moz-animation-iteration:infinite;
+}
+.cloud2Anim{
+	-webkit-animation-name:largeCloud;
+	-webkit-animation-duration:60s;
+	-webkit-animation-iteration:infinite;
+	-moz-animation-name:largeCloud;
+	-moz-animation-duration:60s;
+	-moz-animation-iteration:infinite;
+}
+
+@-webkit-keyframes smallCloud{
+	0%{
+		left: -5%;
+	}
+	100%{
+		left: 100%;
+	}
+}
+@-moz-keyframes smallCloud{
+	0%{
+		left: -5%;
+	}
+	100%{
+		left: 100%;
+	}
+}
+
+@-webkit-keyframes largeCloud{
+	0%{
+		right: -5%;
+	}
+	100%{
+		right: 100%;
+	}
+}
+@-moz-keyframes largeCloud{
+	0%{
+		right: -5%;
+	}
+	100%{
+		right: 100%;
 	}
 }

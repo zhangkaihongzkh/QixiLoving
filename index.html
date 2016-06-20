@@ -24,6 +24,13 @@
 					<div class="a_background_middle"></div>
 					<div class="a_background_botton"></div>
 				</div>
+				<!-- 云 -->
+				<div class="cloudArea">
+					<div class="cloud cloud1"></div>
+					<div class="cloud cloud2"></div>
+				</div>
+				<!-- 太阳 -->
+				<div id="sun"></div>
 			</li>
 
 			<!-- 第二幅页面 -->
@@ -60,13 +67,30 @@
 			var container = $("#content");
 			var swipe = Swipe(container);
 
+			//页面滚到对应的位置
+			function scrollTo(time,proportionX){
+				var distX = container.width() * proportionX;
+				swipe.scrollTo(distX,time);
+			}
+
 			var boy = BoyWalk();
 			//开始
 			$(".button:first").click(function(){
 				
+				//太阳旋转
+				$("#sun").addClass('rotation');
+
+				//云移动
+				$(".cloud1").addClass('cloud1Anim');
+				$(".cloud2").addClass('cloud2Anim');
+
 				//开始第一次走路
+				//页面开始滚动
 				boy.walkTo(2000,0.2).then(function(){
-					boy.setColoer('red');
+					scrollTo(5000,1)
+				}).then(function(){
+					//第二次走路
+					return boy.walkTo(5000,0.5);
 				});
 			});
 		});

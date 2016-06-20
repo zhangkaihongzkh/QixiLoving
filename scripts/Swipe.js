@@ -1,4 +1,4 @@
-//页面滑动
+//页面滑动//
 
 function Swipe(container){
 
