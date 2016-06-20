@@ -9,6 +9,7 @@
 <link href="" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style/index.css">
 <link rel="stylesheet" type="text/css" href="style/pageA.css">
+<link rel="stylesheet" type="text/css" href="style/pageB.css">
 <style type="text/css">
 
 </style>
@@ -34,7 +35,21 @@
 			</li>
 
 			<!-- 第二幅页面 -->
-			<li>第二页</li>
+			<li>
+				<!-- 背景图 -->
+				<div class="b_background"></div>
+				<!-- 先让亮灯的图片先加载 防止出现闪屏现象 -->
+				<div class="b_background_preload"></div>
+				<!-- 商店 -->
+				<div class="shop">
+					<div class="door">
+						<div class="door-left"></div>
+						<div class="door-right"></div>
+					</div>
+					<!-- 灯 -->
+					<div class="lamp"></div>
+				</div>
+			</li>
 
 			<!-- 第三幅页面 -->
 			<li>第三页</li>
@@ -73,6 +88,8 @@
 				swipe.scrollTo(distX,time);
 			}
 
+
+
 			var boy = BoyWalk();
 			//开始
 			$(".button:first").click(function(){
@@ -93,6 +110,10 @@
 					return boy.walkTo(5000,0.5);
 				});
 			});
+
+			//临时调整页面
+			swipe.scrollTo(container.width(),0);
+
 		});
 
 		
