@@ -1,12 +1,12 @@
 /*封装男孩走路*/
 
 function BoyWalk(){
+
 	var container = $("#content");
 	//页面可视区域
 	var visualWidth = container.width();
 	var visualHeight = container.height();
 
-	var swipe = Swipe(container);
 
 	//获取数据
 	var getValue = function(className){
@@ -25,11 +25,11 @@ function BoyWalk(){
 	}();
 
 	var $boy = $("#boy");
+	var boyWidth  = $boy.width();
 	var boyHeight = $boy.height();
 
 	//修正小男孩的位置
 	//路中间的位置减去小孩高度,25是一个修正值
-
 	$boy.css({
 		top:pathY - boyHeight +25
 	});
@@ -91,13 +91,16 @@ function BoyWalk(){
 		//开始走路
 		walkTo:function(time,proportionX,proportionY){
 			var distX = calculateDist('x',proportionX);
-			var distY = calculateDist('y',proportionX);
+			var distY = calculateDist('y',proportionY);
 			return walkRun(time,distX,distY);
 		},
 
 		//停止走路
 		stopWalk:function(){
-
+			pauseWalk();
 		},
+		setColoer:function(value){
+			$boy.css({'backgroundColor':value});
+		}
 	}
 }

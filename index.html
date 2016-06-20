@@ -46,22 +46,31 @@
 
 
 	<script type="text/javascript" src="scripts/jquery.js"></script>
-		<!-- 引入jquery.transit插件 -->
+
+	<!-- 引入jquery.transit插件 -->
 	<script type="text/javascript" src="http://img.mukewang.com/down/55ac9ea30001ace700000000.js"></script>
-	
+	<script type="text/javascript" src="scripts/BoyWalk.js"></script>
 	<script type="text/javascript" src="scripts/Swipe.js"></script>
 	<script type="text/javascript" src="scripts/Qixi.js"></script>
 
+
 	<script type="text/javascript">
 		/*var swipe = Swipe($("#content"));*/
+		$(function(){
+			var container = $("#content");
+			var swipe = Swipe(container);
 
-		//开始
-		$(".button:first").click(function(){
-			//10秒钟,走到0.5 页面的中间
-			var distX = calculateDist('x',0.5);
-			var distY = calculateDist('y',0.5);
-			walkRun(10000,distX,distY);
+			var boy = BoyWalk();
+			//开始
+			$(".button:first").click(function(){
+				
+				//开始第一次走路
+				boy.walkTo(2000,0.2).then(function(){
+					boy.setColoer('red');
+				});
+			});
 		});
+
 		
 	</script>
 </body>
