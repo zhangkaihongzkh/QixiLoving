@@ -71,6 +71,12 @@ button{
     top: 55%;
 }
 
+/* 人物暂停 */
+.pauseWalk {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+}
+
 /* 慢走动画 */
 .slowwalk{
 	/* 动画名称 */
