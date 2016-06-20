@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>七夕言情</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style/index.css">
+<link rel="stylesheet" type="text/css" href="style/pageA.css">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div id="content">
+		<!-- 主题部分 -->
+		<ul class="content-wrap">
+			<!-- 第一幅页面 -->
+			<li>
+				<div class="a_background">
+					<div class="a_background_top"></div>
+					<div class="a_background_middle"></div>
+					<div class="a_background_botton"></div>
+				</div>
+			</li>
+
+			<!-- 第二幅页面 -->
+			<li>第二页</li>
+
+			<!-- 第三幅页面 -->
+			<li>第三页</li>
+		</ul>
+
+		<!-- 测试按钮 -->
+		<div class="button">
+			<button>开始</button>
+		</div>
+
+		<!-- 男孩与根节点并列 -->
+		<div id="boy" class="charector slowwalk"></div>
+	</div> 
+
+
+
+
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+		<!-- 引入jquery.transit插件 -->
+	<script type="text/javascript" src="http://img.mukewang.com/down/55ac9ea30001ace700000000.js"></script>
+	
+	<script type="text/javascript" src="scripts/Swipe.js"></script>
+	<script type="text/javascript" src="scripts/Qixi.js"></script>
+
+	<script type="text/javascript">
+		/*var swipe = Swipe($("#content"));*/
+
+		//开始
+		$(".button:first").click(function(){
+			//10秒钟,走到0.5 页面的中间
+			var distX = calculateDist('x',0.5);
+			var distY = calculateDist('y',0.5);
+			walkRun(10000,distX,distY);
+		});
+		
+	</script>
+</body>
+</html>

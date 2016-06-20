@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-06-20 17:10:40
+ * @version $Id$
+ */
+ /* 通用样式 */
+*{
+	margin: 0;
+	padding: 0;
+}
+ul,
+li{
+	list-style: none;
+}
+
+/* 主题部分 */
+#content{
+	width: 60%;
+	height: 60%;
+/* 	top: 20%;
+left: 20%; */
+	overflow: hidden;
+	position: absolute;
+	border: 1px solid #ccc;
+}
+
+.content-wrap{
+	position: relative;
+}
+
+.content-wrap>li{
+	background-color: #CAE1FF;
+	content: red;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+
+li:nth-child(2){
+	background-color: #9BCD9B;
+}
+li:nth-child(3){
+	background-color: yellow;
+}
+
+button{
+	width: 100%;
+	height: 50%;
+}
+.button{
+	position: absolute;
+	bottom: 0;
+}
+
+/* 人物图片 */
+.charector{
+	width: 151px;
+	height: 291px;
+	background: url(../img/boy.png) -0px -291px no-repeat;
+    position: absolute;
+    left: 6%;
+    top: 55%;
+}
+
+/* 慢走动画 */
+.slowwalk{
+	/* 动画名称 */
+	-webkit-animation-name:person-slow;
+	/* 完成动画时间 */
+	-webkit-animation-duration:950ms;
+	/* 完成动画的次数 */
+	-webkit-animation-iteration-count:infinite;
+	/* 动画切换的方式(一帧一帧切换) */
+	-webkit-animation-timing-function:steps(1,start);
+
+	-moz-animation-name:person-slow;
+	/* 完成动画时间 */
+	-moz-animation-duration:950ms;
+	/* 完成动画的次数 */
+	-moz-animation-iteration-count:infinite;
+	/* 动画切换的方式(一帧一帧切换) */
+	-moz-animation-timing-function:steps(1,start);
+}
+
+/* 普通慢走 */
+@-webkit-keyframes person-slow{
+	0%{
+		background-position: -0px -291px;
+	}
+	25%{
+		background-position: -602px -0px;
+	}
+	50%{
+		background-position:-302px  -291px;
+	}
+	75%{
+		background-position:-151px  -291px;
+	}
+	100%{
+		background-position: -0px -291px;
+	}
+}
+@-moz-keyframes person-slow{
+	0%{
+		background-position: -0px -291px;
+	}
+	25%{
+		background-position: -602px -0px;
+	}
+	50%{
+		background-position:-302px  -291px;
+	}
+	75%{
+		background-position:-151px  -291px;
+	}
+	100%{
+		background-position: -0px -291px;
+	}
+}
