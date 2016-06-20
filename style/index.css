@@ -10,6 +10,8 @@
 	margin: 0;
 	padding: 0;
 }
+
+ol,
 ul,
 li{
 	list-style: none;
@@ -43,6 +45,11 @@ li:nth-child(2){
 }
 li:nth-child(3){
 	background-color: yellow;
+}
+a{
+	position: absolute;
+	top: 50%;
+	left: 40%;
 }
 
 button{
