@@ -33,19 +33,19 @@ left: 20%; */
 }
 
 .content-wrap>li{
-	background-color: #CAE1FF;
+/* 	background-color: #CAE1FF; */
 	content: red;
 	float: left;
 	overflow: hidden;
 	position: relative;
 }
 
-li:nth-child(2){
+/* li:nth-child(2){
 	background-color: #9BCD9B;
 }
 li:nth-child(3){
 	background-color: yellow;
-}
+} */
 a{
 	position: absolute;
 	top: 50%;
@@ -106,8 +106,13 @@ button{
     -moz-animation-play-state: paused;
 }
 
+/* 人物复位 */
+.boyOriginal{
+	background-position: -150px -0px;
+}
+
 /* 慢走动画 */
-.slowwalk{
+.slowWalk{
 	/* 动画名称 */
 	-webkit-animation-name:person-slow;
 	/* 完成动画时间 */
@@ -162,79 +167,6 @@ button{
 	}
 }
 
-/* 太阳旋转动画 */
-.rotation{
-	-webkit-animation-name:rotation;
-	-webkit-animation-duration:30s;
-	-moz-animation-name:rotation;
-	-moz-animation-duration:30s;
-}
 
-@-webkit-keyframes rotation{
-	0%{
-		transform: translateX(0) translateY(0);
-	}
-	100%{
-		transform: translateX(-2000px) translateY(400px);
-	}
-}
-@-moz-keyframes rotation{
-	0%{
-		transform: translateX(0) translateY(0);
-	}
-	100%{
-		transform: translateX(-2000px) translateY(400px);
-	}
-}
 
-/* 云移动动画 */
-.cloud1Anim{
-	-webkit-animation-name:smallCloud;
-	-webkit-animation-duration:30s;
-	-webkit-animation-iteration:infinite;
-	-moz-animation-name:smallCloud;
-	-moz-animation-duration:30s;
-	-moz-animation-iteration:infinite;
-}
-.cloud2Anim{
-	-webkit-animation-name:largeCloud;
-	-webkit-animation-duration:60s;
-	-webkit-animation-iteration:infinite;
-	-moz-animation-name:largeCloud;
-	-moz-animation-duration:60s;
-	-moz-animation-iteration:infinite;
-}
 
-@-webkit-keyframes smallCloud{
-	0%{
-		left: -5%;
-	}
-	100%{
-		left: 100%;
-	}
-}
-@-moz-keyframes smallCloud{
-	0%{
-		left: -5%;
-	}
-	100%{
-		left: 100%;
-	}
-}
-
-@-webkit-keyframes largeCloud{
-	0%{
-		right: -5%;
-	}
-	100%{
-		right: 100%;
-	}
-}
-@-moz-keyframes largeCloud{
-	0%{
-		right: -5%;
-	}
-	100%{
-		right: 100%;
-	}
-}

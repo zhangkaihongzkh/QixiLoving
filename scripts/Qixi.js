@@ -73,6 +73,8 @@ function BoyWalk(){
 		return data.top + data.height/2;
 	}();
 
+
+
 	var $boy = $("#boy");
 	var boyWidth  = $boy.width();
 	var boyHeight = $boy.height();
@@ -162,6 +164,17 @@ function BoyWalk(){
 		return defer;
 	}
 
+	//取花
+	function getFlower(){
+		var defer = $.Deferred();
+		//增加延迟等待
+		setTimeout(function(){
+			$boy.addClass('getFlower');
+			defer.resolve();
+		}, 2000);
+		return defer;
+	}
+
 	//走出商城
 	function walkOutShop(runtime){
 		var defer = $.Deferred();
@@ -195,6 +208,10 @@ function BoyWalk(){
 		toShop:function(){
 			return walkToShop.apply(null,arguments);
 		},
+		//取花
+		getFlower:function(){
+			return getFlower();
+		},
 		//走出商店
 		outShop:function(){
 			return walkOutShop.apply(null,arguments);
@@ -206,6 +223,35 @@ function BoyWalk(){
 		},
 		setColoer:function(value){
 			$boy.css({'backgroundColor':value});
+		},
+
+		//获得小男孩宽度
+		getWidth:function(){
+			return $boy.width();
+		},
+
+		//手捧鲜花
+		setFlolerWalk:function(){
+			$boy.addClass('slowFlolerWalk');
+		},
+
+		//还原原地停止状态
+		resetOriginal:function(){
+			this.stopWalk();
+			$boy.removeClass("slowWalk slowFlolerWalk").addClass('boyOriginal');
+		},
+
+		//转身动作
+		rotate:function(callback){
+			restoreWalk();
+			$boy.addClass('boy-rotate');
+			//监听转身完毕
+			/*if(callback){
+				$boy.on(animationEnd,function(){
+					callback();
+					$(this).off();
+				});
+			}*/
 		}
 	}
 }

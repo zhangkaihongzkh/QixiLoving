@@ -7,7 +7,10 @@ function Swipe(container){
 	var swipe = {};
 
 	//获取页面个数
-	var slides = element.find("li");
+	var slides = element.find(">");
+	/*console.log(slides);*/
+
+
 
 	//获取容器尺寸
 	var width = container.width();

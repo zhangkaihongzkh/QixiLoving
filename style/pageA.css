@@ -27,3 +27,80 @@
     background-image: url(../img/background/a_background_botton.png);
     background-size: 100% 100%;
 }
+
+/* 太阳旋转动画 */
+.rotation{
+    -webkit-animation-name:rotation;
+    -webkit-animation-duration:30s;
+    -moz-animation-name:rotation;
+    -moz-animation-duration:30s;
+}
+
+@-webkit-keyframes rotation{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    100%{
+        transform: translateX(-2000px) translateY(400px);
+    }
+}
+@-moz-keyframes rotation{
+    0%{
+        transform: translateX(0) translateY(0);
+    }
+    100%{
+        transform: translateX(-2000px) translateY(400px);
+    }
+}
+
+/* 云移动动画 */
+.cloud1Anim{
+    -webkit-animation-name:smallCloud;
+    -webkit-animation-duration:30s;
+    -webkit-animation-iteration:infinite;
+    -moz-animation-name:smallCloud;
+    -moz-animation-duration:30s;
+    -moz-animation-iteration:infinite;
+}
+.cloud2Anim{
+    -webkit-animation-name:largeCloud;
+    -webkit-animation-duration:60s;
+    -webkit-animation-iteration:infinite;
+    -moz-animation-name:largeCloud;
+    -moz-animation-duration:60s;
+    -moz-animation-iteration:infinite;
+}
+
+@-webkit-keyframes smallCloud{
+    0%{
+        left: -5%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@-moz-keyframes smallCloud{
+    0%{
+        left: -5%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@-webkit-keyframes largeCloud{
+    0%{
+        right: -5%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+@-moz-keyframes largeCloud{
+    0%{
+        right: -5%;
+    }
+    100%{
+        right: 100%;
+    }
+}
