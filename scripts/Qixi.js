@@ -10,6 +10,15 @@ var lamp = {
 	}
 };
 
+// 动画结束事件
+var animationEnd = (function() {
+   var explorer = navigator.userAgent;
+   if (~explorer.indexOf('WebKit')) {
+       return 'webkitAnimationEnd';
+   }
+   return 'animationend';
+})();
+
 //门的动作
 function doorAction(left,right,time){
 	var $door = $(".door");
@@ -246,12 +255,12 @@ function BoyWalk(){
 			restoreWalk();
 			$boy.addClass('boy-rotate');
 			//监听转身完毕
-			/*if(callback){
+			if(callback){
 				$boy.on(animationEnd,function(){
 					callback();
 					$(this).off();
 				});
-			}*/
+			}
 		}
 	}
 }
