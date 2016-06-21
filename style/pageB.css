@@ -34,7 +34,12 @@
     overflow: hidden;
     left: 58.5%;
 }
-
+.door-left,
+.door-right{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+}
 .door-left {
     left: 0%;
     background: url(../img/door-left.png);
