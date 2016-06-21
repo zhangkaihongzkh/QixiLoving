@@ -185,20 +185,35 @@
 			//修正女孩的位置
 			girl.setOffset();
 
+			//音乐配置
+			var audioConfig = {
+				enable:true,						//是否开启音乐
+				playURL: 'audio/happy.wav',			//正常播放地址
+				cycleURL:'audio/circulation.wav'	//循环播放地址
+			}	
+			// 背景音乐
+			function Html5Audio(url,isloop){
+				var audio = new Audio(url);
+				audio.autoPlay = true;
+				audio.loop = isloop || false;
+				audio.play();
+				return {
+					end:function(callback){
+						audio.addEventListener('ended', function(){
+							callback();
+						},false);
+					}
+				};
+			}
+
 			/*雪花路径*/
 			var snowflakeURL = [
-/*				"../img/snowflake/snowflake1.png",
-				"../img/snowflake/snowflake2.png",
-				"../img/snowflake/snowflake3.png",
-				"../img/snowflake/snowflake4.png",
-				"../img/snowflake/snowflake5.png",
-				"../img/snowflake/snowflake6.png"*/
-				'http://img.mukewang.com/55adde120001d34e00410041.png',
-		        'http://img.mukewang.com/55adde2a0001a91d00410041.png',
-		        'http://img.mukewang.com/55adde5500013b2500400041.png',
-		        'http://img.mukewang.com/55adde62000161c100410041.png',
-		        'http://img.mukewang.com/55adde7f0001433000410041.png',
-		        'http://img.mukewang.com/55addee7000117b500400041.png'
+				"img/snowflake/snowflake1.png",
+				"img/snowflake/snowflake2.png",
+				"img/snowflake/snowflake3.png",
+				"img/snowflake/snowflake4.png",
+				"img/snowflake/snowflake5.png",
+				"img/snowflake/snowflake6.png"
 			];
 
 			//飘雪花
@@ -312,6 +327,10 @@
 		
 			//开始
 			$(".button:first").click(function(){
+				var aduio1 = Html5Audio(audioConfig.playURL);
+				aduio1.end(function(){
+					Html5Audio(audioConfig.cycleURL,true);
+				});
 				/*
 				//太阳旋转
 				$("#sun").addClass('rotation');
